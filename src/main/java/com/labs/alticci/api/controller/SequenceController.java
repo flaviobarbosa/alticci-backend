@@ -1,6 +1,7 @@
 package com.labs.alticci.api.controller;
 
 import com.labs.alticci.api.model.Response;
+import com.labs.alticci.api.openApi.controller.SequenceControllerOpenApi;
 import com.labs.alticci.domain.service.SequenceService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -11,7 +12,7 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("/alticci")
 @AllArgsConstructor
-public class SequenceController {
+public class SequenceController implements SequenceControllerOpenApi {
 
     private SequenceService service;
 
