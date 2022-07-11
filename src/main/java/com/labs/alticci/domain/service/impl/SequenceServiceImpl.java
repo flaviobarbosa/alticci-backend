@@ -9,6 +9,18 @@ public class SequenceServiceImpl implements SequenceService {
 
     @Override
     public Response getSequenceValue(Integer index) {
-        return null;
+        Long sequenceValue = calculate(index);
+
+        return Response.builder().data(sequenceValue).build();
+    }
+
+    private Long calculate(Integer index) {
+        if(index == 0)
+            return 0L;
+
+        if(index == 1 || index == 2)
+            return 1L;
+
+        return calculate(index - 3) + calculate(index - 2);
     }
 }
