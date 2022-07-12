@@ -16,6 +16,8 @@
 - Run commands  
 
 ```sh
+> cd alticci-backend
+
 > ./mvnw clean package
 
 > java -jar target/Alticci-0.0.1-SNAPSHOT.jar
