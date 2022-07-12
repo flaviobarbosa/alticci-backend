@@ -19,6 +19,9 @@ public class SequenceServiceImpl implements SequenceService {
 
     @Override
     public Response getSequenceValue(Integer index) {
+        if(index < 0)
+            throw new IllegalArgumentException("Index should be greater than or equal zero");
+
         Long sequenceValue = cache.containsKey(index) ? cache.get(index) : calculate(index);
 
         cache.putIfAbsent(index, sequenceValue);
